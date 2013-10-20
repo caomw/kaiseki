@@ -1,21 +1,26 @@
 cmake_minimum_required(VERSION 2.6)
 
-project(DO_MatchPropagation)
+project(FeaturePerf)
 
-# if (NOT APPLE)
-  # find_package(OpenMP) 
-  # if (OPENMP_FOUND)
-    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-  # endif()
-# endif ()
-
+################################################################################
+# Dependencies with packages
+#
+# Setup DO++ libraries (which will be built from source).
+set(DO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../third-party/doplusplus)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${DO_DIR}/cmake)
 find_package(DO COMPONENTS 
              Core Graphics Geometry 
              Features FeatureDetectors Match
              FeatureMatching REQUIRED)
 include(${DO_USE_FILE})
-
-# Define the SRCPATH macro for the DO.Core library.
+# Activate OpenMP if found
+if (NOT APPLE)
+  find_package(OpenMP) 
+  if (OPENMP_FOUND)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+  endif()
+endif ()
+# Define the SRCPATH macro from the DO.Core library.
 add_definitions(-DSRCDIR=${CMAKE_CURRENT_SOURCE_DIR})
 
 ################################################################################
