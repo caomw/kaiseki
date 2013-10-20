@@ -1,0 +1,6 @@
+[submodule "third-party/doplusplus"]
+	path = third-party/doplusplus
+	url = https://github.com/davidok8/doplusplus.git
+[submodule "third-party/AKAZE"]
+	path = third-party/AKAZE
+	url = https://github.com/davidok8/AKAZE.git
