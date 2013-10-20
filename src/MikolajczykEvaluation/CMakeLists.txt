@@ -25,16 +25,16 @@ add_definitions(-DSRCDIR=${CMAKE_CURRENT_SOURCE_DIR})
 
 ################################################################################
 # For performance measurement and empirical validation.
-add_library(DO_Stat Stat.cpp Stat.hpp)
+add_library(FeaturePerf_Stat Stat.cpp Stat.hpp)
 
 ################################################################################
 # Helper classes to perform studies with Mikolajczyk et al.'s dataset.
-add_library(DO_MikolajczykDataset
+add_library(FeaturePerf_MikolajczykDataset
             MikolajczykDataset.cpp MikolajczykDataset.hpp
             StudyOnMikolajczykDataset.cpp StudyOnMikolajczykDataset.hpp)
-do_use_modules(DO_MikolajczykDataset
+do_use_modules(FeaturePerf_MikolajczykDataset
                "${DO_LIBRARIES};DO_Stat")
 
-add_executable(DO_MikolajczykDataset_test DO_MikolajczykDataset_test.cpp)
-do_use_modules(DO_MikolajczykDataset_test
-               "${DO_LIBRARIES};DO_MikolajczykDataset")
+add_executable(FeaturePerf_MikolajczykDataset_test MikolajczykDataset_test.cpp)
+do_use_modules(FeaturePerf_MikolajczykDataset_test
+               "${DO_LIBRARIES};FeaturePerf_MikolajczykDataset")
