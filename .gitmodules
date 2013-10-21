@@ -4,3 +4,6 @@
 [submodule "third-party/AKAZE"]
 	path = third-party/AKAZE
 	url = https://github.com/davidok8/AKAZE.git
+[submodule "datasets"]
+	path = datasets
+	url = https://github.com/davidok8/FeaturePerfDatasets.git
