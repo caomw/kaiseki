@@ -21,7 +21,7 @@ if (NOT APPLE)
   endif()
 endif ()
 # Define the SRCPATH macro from the DO.Core library.
-add_definitions(-DSRCDIR=${CMAKE_CURRENT_SOURCE_DIR})
+#add_definitions(-DDATASETS_DIR=${FEATUREPERF_DATASETS_DIR})
 
 ################################################################################
 # For performance measurement and empirical validation.
@@ -33,7 +33,7 @@ add_library(FeaturePerf_MikolajczykDataset
             MikolajczykDataset.cpp MikolajczykDataset.hpp
             StudyOnMikolajczykDataset.cpp StudyOnMikolajczykDataset.hpp)
 do_use_modules(FeaturePerf_MikolajczykDataset
-               "${DO_LIBRARIES};DO_Stat")
+               "${DO_LIBRARIES};FeaturePerf_Stat")
 
 add_executable(FeaturePerf_MikolajczykDataset_test MikolajczykDataset_test.cpp)
 do_use_modules(FeaturePerf_MikolajczykDataset_test

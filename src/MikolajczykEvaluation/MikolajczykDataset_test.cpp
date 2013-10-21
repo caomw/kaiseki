@@ -14,7 +14,7 @@ using namespace std;
 using namespace DO;
 
 // Dataset paths.
-const string mikolajczyk_dataset_folder("C:/Users/David/Desktop/doplusplus/trunk/DO/ValidateRegionGrowing");
+const string mikolajczyk_dataset_folder = "";
 const string folders[8] = { 
   "bark", "bikes", "boat", "graf", "leuven", "trees", "ubc", "wall" 
 };
@@ -63,7 +63,7 @@ public:
 int main()
 {
   TestRegion test(mikolajczyk_dataset_folder, 
-                                      folders[0], ext[1]);
+                  folders[0], ext[1]);
   test();
   return 0;
 }
