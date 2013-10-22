@@ -13,25 +13,28 @@
 using namespace std;
 using namespace DO;
 
-// Dataset paths.
-const string mikolajczyk_dataset_folder = "";
-const string folders[8] = { 
-  "bark", "bikes", "boat", "graf", "leuven", "trees", "ubc", "wall" 
-};
-const string ext[4] = { ".dog", ".haraff", ".hesaff", ".mser" };
+const int NUM_FOLDERS = 9;
+const int NUM_FEAT_EXT = 4;
+const int NUM_IMAGES_PER_DATASET = 6;
 
-class TestRegion : public StudyOnMikolajczykDataset
+const string dataset_folder = "C:/Users/David/Desktop/GitHub/FeaturePerf/datasets";
+const string folders[NUM_FOLDERS] = { 
+  "bark", "bikes", "boat", "graf", "leuven", "trees", "ubc", "wall", "iguazu"
+};
+const string ext[NUM_FEAT_EXT] = { ".dog", ".haraff", ".hesaff", ".mser" };
+
+class TestFeatures : public StudyOnMikolajczykDataset
 {
 public:
-  TestRegion(const string& absParentFolderPath,
-             const string& name,
-             const string& featType)
+  TestFeatures(const string& absParentFolderPath,
+               const string& name,
+               const string& featType)
     : StudyOnMikolajczykDataset(absParentFolderPath, name, featType)
   {}
 
   void operator()()
   {
-    for (int j = 1; j < 6; ++j)
+    for (int j = 1; j < NUM_IMAGES_PER_DATASET; ++j)
     {
       // View the image pair.
       openWindowForImagePair(0, j);
@@ -39,7 +42,7 @@ public:
       drawer.setVizParams(1.0f, 1.0f, PairWiseDrawer::CatH);
       drawer.displayImages();
       {
-        // Read the set of keypoints $\mathcal{X}$ in image 1.
+        // Read the set of keypoints $/mathcal{X}$ in image 1.
         const vector<Keypoint>& X = dataset().keys(0);
         // Read the set of keypoints $\mathcal{Y}$ in image 2.
         const vector<Keypoint>& Y = dataset().keys(j);
@@ -62,7 +65,7 @@ public:
 
 int main()
 {
-  TestRegion test(mikolajczyk_dataset_folder, 
+  TestFeatures test(dataset_folder, 
                   folders[0], ext[1]);
   test();
   return 0;
