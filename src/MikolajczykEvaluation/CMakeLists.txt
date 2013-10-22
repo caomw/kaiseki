@@ -20,8 +20,6 @@ if (NOT APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
   endif()
 endif ()
-# Define the SRCPATH macro from the DO.Core library.
-#add_definitions(-DDATASETS_DIR=${FEATUREPERF_DATASETS_DIR})
 
 ################################################################################
 # For performance measurement and empirical validation.
