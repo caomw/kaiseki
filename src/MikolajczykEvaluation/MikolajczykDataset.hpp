@@ -38,7 +38,7 @@ namespace DO {
     std::string folderPath() const { return parent_folder_path_+"/"+name_; }
     const Image<Rgb8>& image(size_t i) const { return image_[i]; }
     const Matrix3f& H(size_t i) const { return H_[i]; }
-    const std::vector<Keypoint>& keys(size_t i) const { return keys_[i]; }
+    const Set<OERegion, RealDescriptor>& keys(size_t i) const { return keys_[i]; }
 
   private:
     bool loadImages();
@@ -50,7 +50,7 @@ namespace DO {
     std::string feat_type_;
     std::vector<Image<Rgb8> > image_;
     std::vector<Matrix3f> H_;
-    std::vector<std::vector<Keypoint> > keys_;
+    std::vector<Set<OERegion, RealDescriptor> > keys_;
   };
 
 } /* namespace DO */

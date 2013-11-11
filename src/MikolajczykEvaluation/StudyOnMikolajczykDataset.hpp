@@ -37,8 +37,8 @@ namespace DO {
     void openWindowForImagePair(size_t i, size_t j) const;
     void closeWindowForImagePair() const;
     // Match related functions.
-    std::vector<Match> computeMatches(const std::vector<Keypoint>& X,
-                                      const std::vector<Keypoint>& Y,
+    std::vector<Match> computeMatches(const Set<OERegion, RealDescriptor>& X,
+                                      const Set<OERegion, RealDescriptor>& Y,
                                       float squaredEll) const;
     void getInliersAndOutliers(std::vector<size_t>& inliers,
                                std::vector<size_t>& outliers,

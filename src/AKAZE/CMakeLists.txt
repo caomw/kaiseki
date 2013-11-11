@@ -1,7 +1,7 @@
 # Setup OpenCV libraries
 find_package(OpenCV REQUIRED)
 # Setup DO++ libraries
-set(DO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../third-party/doplusplus)
+set(DO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../third-party/DO-CV)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${DO_DIR}/cmake)
 find_package(DO COMPONENTS 
              Core Graphics Features REQUIRED)

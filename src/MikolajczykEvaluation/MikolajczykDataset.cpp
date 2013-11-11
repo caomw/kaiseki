@@ -21,7 +21,8 @@ namespace DO {
     keys_.resize(image_.size());
     for (size_t i = 0; i != keys_.size(); ++i)
     {
-      if (!readKeypoints(keys_[i], folderPath()+"/img"+toString(i+1)+featType))
+      if (!readKeypoints(keys_[i].features, keys_[i].descriptors,
+                         folderPath()+"/img"+toString(i+1)+featType))
         return false;
     }
     return true;

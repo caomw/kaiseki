@@ -6,7 +6,7 @@
 //  ACCV 2012, Daejeon, South Korea.
 //
 // Copyright (c) 2013. David Ok, Imagine (ENPC/CSTB).
-// ===========================================================================
+// =========================================================================== //
 
 #include "StudyOnMikolajczykDataset.hpp"
 
@@ -43,9 +43,9 @@ public:
       drawer.displayImages();
       {
         // Read the set of keypoints $/mathcal{X}$ in image 1.
-        const vector<Keypoint>& X = dataset().keys(0);
+        const Set<OERegion, RealDescriptor>& X = dataset().keys(0);
         // Read the set of keypoints $\mathcal{Y}$ in image 2.
-        const vector<Keypoint>& Y = dataset().keys(j);
+        const Set<OERegion, RealDescriptor>& Y = dataset().keys(j);
         // Compute initial matches.
         vector<Match> M(computeMatches(X, Y, 1.2f*1.2f));
         // Get inliers and outliers.

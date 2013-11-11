@@ -7,3 +7,6 @@
 [submodule "datasets"]
 	path = datasets
 	url = https://github.com/davidok8/FeaturePerfDatasets.git
+[submodule "third-party/DO-CV"]
+	path = third-party/DO-CV
+	url = https://github.com/davidok8/DO-CV.git

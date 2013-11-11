@@ -42,7 +42,7 @@ int main()
     features = detector.run(img.convert<unsigned char>());
 
     for (size_t i = 0; i < features.size(); ++i)
-      features[i].drawOnScreen(Red8);
+      features[i].draw(Red8);
     getKey();
   }
 

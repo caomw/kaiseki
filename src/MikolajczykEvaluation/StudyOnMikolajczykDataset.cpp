@@ -39,7 +39,8 @@ namespace DO {
 
   vector<Match>
   StudyOnMikolajczykDataset::
-  computeMatches(const vector<Keypoint>& X, const vector<Keypoint>& Y,
+  computeMatches(const Set<OERegion, RealDescriptor>& X,
+                 const Set<OERegion, RealDescriptor>& Y,
                  float squaredEll) const
   {
     printStage("Computing initial matches $\\mathcal{M}$ with $\\ell = "
